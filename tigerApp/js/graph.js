@@ -45,30 +45,24 @@ function createGauge(name, label, min, max)
 	var type_name = name;
 	
 	//create dedicated Div	
-	if(name=="temp1")
+	if(name=="temp")
 		label = "°C";
-	else if(name=="hum1")
-		label = "%";
-	else if(name=="tempDevice")
-		label = "°C";
-	else if(name=="humDevice")
+	else if(name=="hum")
 		label = "%";
 	else if(name=="lux")
 		label = "lux";
 	else if(name=="rpm")
 		label = "rpm";				
-    else if(name=="pp_count")
+    	else if(name=="pp_count")
 		label = "rpm";
-	else if(name=="battery")
+	else if(name=="volt")
+		label = "V";
+	else if(name=="lipo")
 		label = "V";
 	else if(name=="moisture")
 		label = "%";
-   	else if(name=="soilTemp1")
+   	else if(name=="waterTemp")
 		label = "°C";
-	else if(name=="soilTemp2")
-		label = "°C";
-	else if(name=="pH")
-		label = "pH";
 	else if(name=="remoteTemp")
 		label = "°C";
 	else if(name=="remotePresence")
@@ -120,31 +114,23 @@ function createGauges(id)
 			var name = sensorTypes[index]['name'];
 			
 			//create dedicated Div	
-			if(name=="temp1")
-				name = "Temperature 1";
-			else if(name=="hum1")
-				name = "Humidity 1";
-			else if(name=="tempDevice")
-				name = "Temperature Device";
-			else if(name=="humDevice")
-				name = "Humidity Device";
+			if(name=="temp")
+				name = "Temperature";
+			else if(name=="hum")
+				name = "Humidity";
 			else if(name=="lux")
 				name = "Light";
 			else if(name=="rpm")
 				name = "RPM Anemometer";				
-		    else if(name=="pp_count")
+		    	else if(name=="pp_count")
 				name = "Pluviometer";
-			else if(name=="battery")
+			else if(name=="volt")
 				name = "Battery level";
-			else if(name=="moisture")
-				name = "Moisture";
-		   	else if(name=="soilTemp1")
-				name = "Soil Temperature 1";
-			else if(name=="soilTemp2")
-				name = "Soil Temperature 2";
-			else if(name=="pH")
-				name = "pH";
-			else if(name=="remoteTemp")
+			else if(name=="lipo")
+				name = "LiPo level";
+			else if(name=="waterTemp")
+				name = "Water Temp";
+		   	else if(name=="remoteTemp")
 				name = "Remote Temp";
 			else if(name=="remotePresence")
 				name = "Water presence";
@@ -367,7 +353,7 @@ function updateGauges(id)
 			var sensorTypes = data['sensorTypes']; 
 	
 			for(index in sensorTypes){
-				if( (sensorTypes[index]['type'] != "termometria") && (sensorTypes[index]['type'] != "igrometria") ){
+				if( (sensorTypes[index]['type'] != "light") && (sensorTypes[index]['type'] != "termometria") && (sensorTypes[index]['type'] != "igrometria") ){
 					gauges[sensorTypes[index]['name']].redraw(json_pay[sensorTypes[index]['name']]);
 				}
 			}
@@ -490,28 +476,22 @@ function loadGraphData(deviceId,type, placeholder, sensorType,min,max,unita) {
     var graphTitle;
     
 	//create dedicated Div	
-	if(type=="tempDevice")
-		graphTitle = "Temperature Device";
-	else if(type=="humDevice")
-		graphTitle = "Humidity Device";
-	else if(type=="temp1")
-		graphTitle = "Temperature 1";
-	else if(type=="hum1")
-		graphTitle = "Humidity 1";
+	if(type=="temp")
+		graphTitle = "Temperature";
+	else if(type=="hum")
+		graphTitle = "Humidity";
 	else if(type=="lux")
 		graphTitle = "Light";
 	else if(type=="rpm")
 		graphTitle = "RPM Anemometer";				
-    else if(type=="pp_count")
+    	else if(type=="pp_count")
 		graphTitle = "Pluviometer";
-	else if(type=="battery")
+	else if(type=="volt")
 		graphTitle = "Battery level";
-	else if(type=="moisture")
-		graphTitle = "Moisture";
-   	else if(type=="soilTemp1")
-		graphTitle = "Soil Temperature 1";
-	else if(type=="soilTemp2")
-		graphTitle = "Soil Temperature 2";
+	else if(type=="lipo")
+		graphTitle = "LiPo level";
+   	else if(type=="waterTemp")
+		graphTitle = "Water Temperature";
 	else if(name=="remoteTemp")
 		graphTitle = "Remote Temperature";
 	else if(name=="remotePresence")
@@ -610,6 +590,8 @@ function loadGraphData(deviceId,type, placeholder, sensorType,min,max,unita) {
 				clickable: true
 			}
 		};
+		
+		console.log("placeholder: " + placeholder);
 		
 		var plot = $.plot($('#' + placeholder), [{
 			data : graphData//,
