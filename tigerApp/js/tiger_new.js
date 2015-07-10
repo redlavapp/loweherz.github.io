@@ -60,7 +60,7 @@ function initTiger(){
 			return this._div;
 		};
 		title.update = function () {
-			this._div.innerHTML = '<div style="background:#000;color:#fff;"><h2>#Zanzara tigre maps</h2>Mappe Produttività Adulti e Uova</div>'
+			this._div.innerHTML = '<div style="background:#fff;color:#000;"><h2>#Zanzara tigre maps</h2>Mappe Produttività Adulti e Uova</div>'
 		};
 		title.addTo(map);
 		var osmGeocoder = new L.Control.OSMGeocoder({
