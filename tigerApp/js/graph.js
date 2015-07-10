@@ -101,7 +101,7 @@ function createGauges(id)
 
 		$('#gauge_click_status').html("<img class=\"dashboard-icon\" src=\"images/dashboard/device.png\" /><div>Status of device:</div>");
 		$('#gauge_click_thermometry').html("<img class=\"dashboard-icon\" src=\"images/dashboard/thermometer.png\" /><div>Thermometry sensors:</div>");
-		$('#gauge_click_igrometry').html("<img class=\"dashboard-icon\" src=\"images/dashboard/humidity.png\" /><div>Igrmometry sensors:</div>");
+		$('#gauge_click_igrometry').html("<img class=\"dashboard-icon\" src=\"images/dashboard/humidity.png\" /><div>Hygrmometry sensors:</div>");
 		$('#gauge_click_anemometry').html("<img class=\"dashboard-icon\" src=\"images/dashboard/wind.png\" /><div>Anemometry sensors:</div>");
 		$('#gauge_click_pluviometry').html("<img class=\"dashboard-icon\" src=\"images/dashboard/rain.png\" /><div>Pluviometry sensors:</div>");
 
