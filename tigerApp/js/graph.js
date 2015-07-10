@@ -398,7 +398,7 @@ function updateTherm(id)
 						
 					var icon='15';
 					
-					$('#' + sensorTypes[index]['name'] + 'GaugeContainer').html("<button class=\"temp-button-"+color+"\" style=\"background-color: "+color+"\"><i class=\"icon-"+icon+"\"></i>"+ value + " °" + sensorTypes[index]['units'] + "</h2>");
+					$('#' + sensorTypes[index]['name'] + 'GaugeContainer').html("<button class=\"temp-button-"+color+"\" style=\"background-color: "+color+"\">"+ value + " °" + sensorTypes[index]['units'] + "</h2>");
 				}
 			}
 		});					
