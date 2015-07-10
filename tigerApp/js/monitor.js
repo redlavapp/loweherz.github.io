@@ -64,7 +64,7 @@ function loadMap(lat,lng)
 			return this._div;
 		};
 		title.update = function () {
-			this._div.innerHTML = '<h2>#Zanzara tigre maps</h2>Centraline monitoraggio'
+			this._div.innerHTML = '<div style="background:#000;color:#fff;"><h2>#Zanzara tigre maps</h2>Centraline monitoraggio</div>'
 		};
 		title.addTo(map);
 		
