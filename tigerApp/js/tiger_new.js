@@ -1,21 +1,6 @@
 function initTiger(){
 	          
-       var title = new L.Control();
-		title.onAdd = function (map) {
-			this._div = L.DomUtil.create('div', 'info'); // create a div with a class "info"
-			this.update();
-			return this._div;
-		};
-		title.update = function () {
-			this._div.innerHTML = '<h2>#Zanzara tigre maps</h2>Mape Produttività Adulti e Uova'
-		};
-		title.addTo(map);
-		var osmGeocoder = new L.Control.OSMGeocoder({
-                                      collapsed: false,
-                                      position: 'topright',
-                                      text: 'Cerca indirizzo!',
-		});
-		osmGeocoder.addTo(map);
+      
 
       var osmLink = '<a href="http://openstreetmap.org">OpenStreetMap</a>',
           thunLink = '<a href="http://thunderforest.com/">Thunderforest</a>',
@@ -66,7 +51,28 @@ function initTiger(){
  
 		};
 
-     
+		
+		
+      var title = new L.Control();
+		title.onAdd = function (map) {
+			this._div = L.DomUtil.create('div', 'info'); // create a div with a class "info"
+			this.update();
+			return this._div;
+		};
+		title.update = function () {
+			this._div.innerHTML = '<h2>#Zanzara tigre maps</h2>Mape Produttività Adulti e Uova'
+		};
+		title.addTo(map);
+		var osmGeocoder = new L.Control.OSMGeocoder({
+                                      collapsed: false,
+                                      position: 'topright',
+                                      text: 'Cerca indirizzo!',
+		});
+		osmGeocoder.addTo(map);
+	 
+	 
+	 
+	 
      L.control.layers(baseLayers,overlays).addTo(map);
      
      var aduLegend = L.control({position: 'bottomright'});
