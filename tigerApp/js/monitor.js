@@ -56,6 +56,20 @@ function loadMap(lat,lng)
 		};
 
      
+	 
+	 var title = new L.Control();
+		title.onAdd = function (map) {
+			this._div = L.DomUtil.create('div', 'info'); // create a div with a class "info"
+			this.update();
+			return this._div;
+		};
+		title.update = function () {
+			this._div.innerHTML = '<h2>#Zanzara tigre maps</h2>Centraline monitoraggio'
+		};
+		title.addTo(map);
+		
+	 
+	 
      L.control.layers(baseLayers,overlays).addTo(map);
 	/*		
 	// add an OpenStreetMap tile layer
