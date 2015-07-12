@@ -115,7 +115,7 @@ function createM2MDeviceMarker(data) {
 	var LeafIcon = L.Icon.extend({
 		options: {
 			//shadowUrl: 'leaf-shadow.png',
-			iconSize:     [100, 100],
+			iconSize:     [60, 60],
 			//shadowSize:   [50, 64],
 			iconAnchor:   [22, 94],
 			//shadowAnchor: [4, 62],
