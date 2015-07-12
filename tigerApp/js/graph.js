@@ -15,7 +15,7 @@ function initializeGraph()
 {
 	id = getUrlVars()["id"];
 	
-	$("#rawData").html("<a href=\"http://149.139.8.55/tigermonitor/api/m2m.php?q=csv&deviceId="+id+"\" onClick=\"javascript:window.open('http://link','Windows','width=650,height=350,toolbar=no,menubar=no,scrollbars=yes,resizable=yes,location=no,directories=no,status=no');return false\">Salva dati con nome</a>");
+	$("#rawData").html("<a href=\"http://149.139.8.55/tigermonitor/api/m2m.php?q=csv&deviceId="+id+"\" onClick=\"javascript:window.open('http://149.139.8.55/tigermonitor/api/m2m.php?q=csv&deviceId="+id+"','Windows','width=650,height=350,toolbar=no,menubar=no,scrollbars=yes,resizable=yes,location=no,directories=no,status=no');return false\">Salva dati con nome</a>");
 	
 	//alert(id);
 	$("#gauge_click_thermometry").off("click");
