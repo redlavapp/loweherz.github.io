@@ -43,6 +43,27 @@ function loadMap(lat,lng)
 
      var osmMap = L.tileLayer(osmUrl, {attribution: osmAttrib});
 	
+	
+	
+	
+	var LeafIcon = L.Icon.extend({
+		options: {
+			//shadowUrl: 'leaf-shadow.png',
+			iconSize:     [38, 95],
+			shadowSize:   [50, 64],
+			iconAnchor:   [22, 94],
+			shadowAnchor: [4, 62],
+			popupAnchor:  [-3, -76]
+		}
+	});
+
+		  
+
+	//L.marker([51.5, -0.09], {icon: greenIcon}).addTo(map).bindPopup("I am a green leaf.");
+	
+	
+	
+	
 	map = L.map('map', {
 			    layers: [osmMap] // only add one!
 		    })
@@ -104,10 +125,11 @@ function popup(url)
 
 
 function createM2MDeviceMarker(data) {
+	var icon = new LeafIcon({iconUrl: 'images/monitor-icon.png'}); 
 		
 	var latlng = L.latLng([ parseFloat(data['lat']) , parseFloat(data['lng']) ]);
 	// add a marker in the given location, attach some popup content to it and open the popup
-	L.marker(latlng).addTo(map) 
+	L.marker(latlng, {icon: icon}).addTo(map) 
 	    //.bindPopup('<a target="_blank" href="data/gauge.php?id=' + data['idDevice'] + '">' + data['type'] +' '+ data['idDevice'] + '</a>')
 	    .bindPopup($('<a href="graphs.html?id='+data['idDevice']+'">' + data['note'] +' - '+ data['idDevice'] + '</a>').click(function(){
 	    	//initializeGraph(data['idDevice']);
