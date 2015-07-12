@@ -52,7 +52,7 @@ function loadMap(lat,lng)
 	map = L.map('map', {
 			    layers: [osmMap] // only add one!
 		    })
-		    .setView([43.8487, 10.5747], 9);
+		    .setView([43.8487, 10.5747], 8);
 
 		var baseLayers = {
 			"OSM Mapnik": osmMap			  
