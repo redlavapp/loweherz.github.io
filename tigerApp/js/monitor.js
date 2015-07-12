@@ -42,21 +42,6 @@ function loadMap(lat,lng)
          osmAttrib = '&copy; ' + osmLink + ' Contributors';
 
      var osmMap = L.tileLayer(osmUrl, {attribution: osmAttrib});
-	
-	
-	
-	
-	var LeafIcon = L.Icon.extend({
-		options: {
-			//shadowUrl: 'leaf-shadow.png',
-			iconSize:     [38, 95],
-			shadowSize:   [50, 64],
-			iconAnchor:   [22, 94],
-			shadowAnchor: [4, 62],
-			popupAnchor:  [-3, -76]
-		}
-	});
-
 		  
 
 	//L.marker([51.5, -0.09], {icon: greenIcon}).addTo(map).bindPopup("I am a green leaf.");
@@ -125,6 +110,20 @@ function popup(url)
 
 
 function createM2MDeviceMarker(data) {
+	
+	
+	var LeafIcon = L.Icon.extend({
+		options: {
+			//shadowUrl: 'leaf-shadow.png',
+			iconSize:     [38, 95],
+			shadowSize:   [50, 64],
+			iconAnchor:   [22, 94],
+			shadowAnchor: [4, 62],
+			popupAnchor:  [-3, -76]
+		}
+	});
+
+	
 	var icon = new LeafIcon({iconUrl: 'images/monitor-icon.png'}); 
 		
 	var latlng = L.latLng([ parseFloat(data['lat']) , parseFloat(data['lng']) ]);
