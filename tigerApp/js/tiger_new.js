@@ -28,7 +28,8 @@ function initTiger(){
                                                opacity: 0.3, 
                                                attribution: redAttrib});
 
-         eggsMap = L.tileLayer(redUrleggs, {   tms: true,
+         eggsMap = L.tileLayer(redUrleggs, {   active: true,
+                                               tms: true,
                                                opacity: 0.3, 
                                                attribution: redAttrib});
 
