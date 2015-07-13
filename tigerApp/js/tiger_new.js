@@ -109,7 +109,7 @@ function initTiger(){
     }
     });
     
-    map.on(''dblclick', function(e) {
+    map.on('dblclick', function(e) {
     alert(" Coordinate Geografiche Lat, Lon : " + e.latlng.lat + ", " + e.latlng.lng)
    }
      // Restrict to bounds
