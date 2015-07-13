@@ -74,7 +74,7 @@ function initTiger(){
 	 
 	 
 	 
-     L.control.layers(baseLayers,overlays).addTo(map);
+     L.control.layers(baseLayers,overlays,{collapsed:false}).addTo(map);
      
      var aduLegend = L.control({position: 'bottomright'});
      var eggsLegend = L.control({position: 'bottomright'});
