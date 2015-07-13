@@ -37,7 +37,7 @@ function initTiger(){
 
        
      var map = L.map('tiger', {
-			     layers: [osmMap, aduMap] // 
+			     layers: [osmMap] // 
 		    })
 		    .setView([43.8487, 10.5747], 9);
 
