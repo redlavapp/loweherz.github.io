@@ -109,9 +109,9 @@ function initTiger(){
     }
     });
     
-    map.on('dbclick', function(e) {
-    alert(" Coordinate Geografiche Lat, Lon : " + e.latlng.lat + ", " + e.latlng.lng)
-   }
+    map.on('dblclick', function(e) {
+    alert(e.latlng);
+    });
      // Restrict to bounds
 
      map.setMaxBounds(bounds);
